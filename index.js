@@ -1,7 +1,8 @@
-const express = require('express')
-const app = express()
-app.all('/', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
-app.listen(process.env.PORT || 3000)
+require("dotenv").config();
+
+const app = require("./app");
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`surver is runing at http://localhost:${PORT}`);
+});
